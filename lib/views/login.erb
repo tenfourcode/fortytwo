@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>FortyTwo</title>
+    <meta name="robots" content="NOINDEX,NOFOLLOW" />
+    <link media="all" type="text/css" href="/stylesheets/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <div class="header_wrap">
+          <div class="logo">FortyTwo</div>
+          <div class="session">
+            <% if session[:user] %>
+            <%= session[:user] %>
+            <% else %>
+            nicht angemeldet
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="content_wrap">
+        <div class="left">
+          
+        </div>
+        <div class="middle">
+          <form id="insert_form" action="/authenticate" method="POST">
+          <ul class="insert_data">
+            <li><input name="user" value="" class="large" /></li>
+            <li><input type="submit" />
+          </ul>
+          </form>
+        </div>
+        <div class="right">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

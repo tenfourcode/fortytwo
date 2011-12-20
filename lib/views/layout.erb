@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>FortyTwo</title>
+    <meta name="robots" content="NOINDEX,NOFOLLOW" />
+    <script type="text/javascript" src="/javascripts/jquery-1.6.1.min.js"></script>
+    <script type="text/javascript" src="/javascripts/json2.js"></script>
+    <script type="text/javascript" src="/javascripts/riak.js"></script>
+    <script type="text/javascript" src="/javascripts/main.js"></script>
+    <link media="all" type="text/css" href="/stylesheets/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <div class="header_wrap">
+          <div class="logo">FortyTwo</div>
+          <div class="navigation">
+            <ul>
+              <li>Start</li>
+              <li>Roadmap</li>
+              <li>Messages</li>
+              <li>Stream</li>
+            </ul>
+          </div>
+          <div class="session">
+            <% if session[:user] %>
+            <%= session[:user] %>
+            <% else %>
+            nicht angemeldet
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="content_wrap">
+        <div class="left">
+          <div class="button">New</div>
+          <form id="insert_form">
+          <ul class="insert_data">
+            <li>
+              <input name="keyvalue[0][key]" class="small" /><input name="keyvalue[0][value]" class="large" /><span class="btn_add">+</span>
+            </li>
+          </ul>
+          </form>
+          <span class="btn_l save">Speichern</span>
+        </div>
+        <div class="middle">
+          <%= yield %>
+        </div>
+        <div class="right">
+          <h3>Message Stream</h3><span class="btn_s">new</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

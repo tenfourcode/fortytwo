@@ -1,0 +1,10 @@
+source 'http://rubygems.org'
+
+gem 'rack', '1.2.4'
+gem 'sinatra'
+gem 'redis'
+gem 'riak-client'
+gem 'ripple'
+gem 'nokogiri'
+gem 'shotgun'
+gem 'simple_uuid'
