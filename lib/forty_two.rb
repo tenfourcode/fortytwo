@@ -3,7 +3,7 @@ require 'rubygems'
 
 class FortyTwo < Sinatra::Base
   set :root, File.dirname(__FILE__)
-  set :public, Proc.new { File.join(root, "public") }
+  set :public_folder, Proc.new { File.join(root, "public") }
   set :views, Proc.new { File.join(root, "views") }
   use Rack::Session::Cookie, :key => 'fortytwo_session', :path => '/', 
         :expire_after => 360,
@@ -23,27 +23,25 @@ class FortyTwo < Sinatra::Base
   
   post '/elements/save' do
     content_type :json
-    client = Riak::Client.new
-    bucket = client.bucket("fortytwo")  # a Riak::Bucket
-    new_one = Riak::RObject.new(bucket)
-    new_one.content_type = "application/json" # You must set the content type.
+    client = MongoClient.connection.collection(Constants.coll_timetracking)
     
-    obj_hash = {'owner' => 'Daniel'}
+    obj_hash = {'owner' => session[:user]}
     params['keyvalue'].each { |key,param|
       obj_hash[param['key']] = param['value']
     }
-    new_one.data = obj_hash
-    new_one.store
     
-    "{key:#{new_one.key}}".to_json
+    client.insert(obj_hash)
+    
+    {:key => 'ok'}.to_json
   end
   
   post '/search' do
     content_type :json
-    client = Riak::Client.new :solr => "/solr"
-    result = client.search("fortytwo","owner:#{params[:search]}*")
+    client = MongoClient.connection.collection(Constants.coll_timetracking)
+    search_text = params[:search]
+    result = client.find(:title => /^#{search_text}/i)
     
-    result['response']['docs'].to_json
+    result.to_a.to_json
   end
   
   get '/login' do
