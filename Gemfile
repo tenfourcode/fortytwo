@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'mongo'
 gem 'bson_ext'
+gem 'mongo_mapper'
 gem 'rack'
 gem 'sinatra'
 gem 'redis'

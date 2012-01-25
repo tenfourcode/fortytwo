@@ -1,5 +1,6 @@
 html { padding:0; margin:0;}
 body { padding:0; margin:0; font:14px Baskerville, Georgia; color:#666; background-color: #f0f0f0;}
+input {padding:5px; margin-right:5px; background-color:#fff; border-radius:3; border:1px solid #ccc;}
 
 h3 {display:inline; font-size:14px; margin:0 3px 0 0; padding:0;}
 
@@ -8,34 +9,52 @@ h3 {display:inline; font-size:14px; margin:0 3px 0 0; padding:0;}
 .ui-autocomplete li {padding: 3px 5px 0 5px; }
 
 .wrapper {}
-.content_wrap {position:relative; left:50%; margin-left:-490px; width:980px;}
+.content_wrap {position:relative; left:50%; margin-left:-490px; width:980px; border-top: 2px dotted #ccc; padding-top:10px;}
 .header_wrap {position:relative; left:50%; margin-left:-490px; width:980px;}
+.subheader_wrap {position:relative; left:50%; margin-left:-490px; width:980px;}
 
-.header {height:50px; background-color: #000; box-shadow: 0px 9px 17px #888; margin:0 0 25px 0;}
+.header {height:50px; background-color: #000; box-shadow: 0px 9px 17px #888; margin:0 0 10px 0;}
 .logo {float:left; padding:13px 0 0 0px; font-size:18px; color:#fff;}
 .navigation {float:left;}
-.navigation ul {margin:20px 0 0 50px; padding:0; list-style:none;}
-.navigation ul li {display:inline; color:#fff; margin-right:15px;}
-.session {width:150px; float:right; margin-top:16px;}
+.navigation ul {margin:17px 0 0 50px; padding:0; list-style:none;}
+.navigation ul li {display:inline; color:#fff; margin-right:15px; cursor: pointer;}
+.navigation ul li a {color:#fff; text-decoration:none;}
+.navigation ul li a:active {color:#fff; text-decoration:none;}
+.navigation ul li a:hover {text-decoration:underline;}
 
-.left {width:220px;; float:left;} /* border:1px solid #ccc; */
-.middle {width:500px; float:left;}
-.right {width:220px; float:right;}
+.filters {margin:5px 0 10px 125px; padding:0; list-style:none; font-size:11px;}
+.filters li {display:inline; margin-right:10px;}
+
+.session {width:150px; float:right; margin-top:16px;}
+.session a {color:#999;}
+.session a:active {color:#999;}
+
+.left {width:150px;; float:left;} /* border:1px solid #ccc; */
+.middle {width:510px; float:left;}
+.right {width:300px; float:right;}
 
 .button {width:60px; padding:5px; border-radius:3; color:#fff; cursor:pointer; text-align:center; background-color:#99cc00;}
 .btn_l {padding:5px; border-radius:3; color:#fff; cursor:pointer; background-color:#84004D;}
-.btn_s {padding:0 2px 2px 2px; font-size:12px; border-radius:2; color:#fff; cursor:pointer; text-align:center; background-color:#99cc00;}
+.btn_s {padding:2px 3px 2px 3px; font-size:12px; border-radius:2; color:#fff; cursor:pointer; text-align:center; background-color:#999;} /* #99cc00 */
+.btn_s_active {padding:2px 3px 2px 3px; font-size:12px; border-radius:2; color:#fff; cursor:pointer; text-align:center; background-color: #99cc00; }
 .btn_add {font-weight:bold; font-size:16px; cursor:pointer;}
 .form_wrap {}
 .form_wrap input[type=text] {width:100%; border:1px solid #ccc; padding:8px;}
 
+#time_form input.duration {width:30px;}
+#time_form input.large {width:300px;}
+
+
 .insert_data {list-style:none; margin:0 0 10px 0; padding:0;}
 .insert_data li {clear:both; padding:15px 0 0 0;}
 .insert_data input {padding:5px; margin-right:5px; background-color:#fff; border-radius:3; border:1px solid #ccc;}
-.insert_data input.small {width:60px;}
-.insert_data input.large {width:110px;}
+.insert_data input.small {width:100px;}
+.insert_data input.large {width:350px;}
 
 .search_result ul {margin:0; padding:0; list-style:none;}
 .search_result ul li {padding:5px 0 5px 0; border-bottom:2px dotted #999;}
 /* #009b95 */
 .search_result span {padding:3px 5px 3px 5px; margin-left:5px; font-size:12px; border-radius:2; color:#fff; cursor:pointer; text-align:center; background-color:#999;}
+
+.list {margin:0; padding:0; list-style:none;}
+.list li {margin:0 0 10px 0;}

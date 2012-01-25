@@ -1,0 +1,21 @@
+<div class="form">
+  <form id="time_form" action="/instant/answer">
+    <h3>Neues Worklet</h3>
+    <ul class="list">
+      <li><label>Task</label>
+        <input type="text" name="task[title]" class="large" />
+        <span onclick="ft.startTimer(this);">start</span>|<span onclick="ft.stopTimer();">stop</span>
+      </li>
+      <li>
+        <label>Task</label>
+        <input type="text" name="task[title]" class="large" />
+        <input type="text" name="task[duration]" class="duration" /><label>Min.</label>
+        <input type="submit" value="Anlegen" />
+      </li>
+    </ul>
+  </form>
+</div>
+<h3>Heutige Worklets</h3>
+<div class="results">
+
+</div>

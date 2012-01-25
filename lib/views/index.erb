@@ -1,12 +1,6 @@
-<div class="search">
-  <div class="form_wrap">
-    <form id="instant_form" action="/instant/answer">
-      <input id="searchfield" type="text" value="" autocomplete="off" />
-    </form>
-  </div>
-</div>
-<div class="search_result">
-  <ul>
-    <li><span>Title</span> Hier kommt Text hinein</li>
-  </ul>
-</div>
+<h3>Neuste Features</h3>
+<ul class="list">
+  <% for feature in @features %>
+    <li><span class="btn_s"><%= feature.created_at.strftime('%d.%m. %H:%M') %></span> <%= feature.title %></li>
+  <% end %>
+</ul>
