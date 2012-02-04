@@ -1,10 +1,12 @@
 source 'http://rubygems.org'
 
+gem 'tzinfo'
 gem 'mongo'
 gem 'bson_ext'
 gem 'mongo_mapper'
 gem 'rack'
 gem 'sinatra'
+gem 'sinatra-contrib'
 gem 'redis'
 gem 'nokogiri'
 gem 'shotgun'

@@ -1,0 +1,19 @@
+<h3>Neues Worklet</h3>
+<form id="insert_form">
+  <ul class="insert_data">
+    <li>
+      <label>Title</label><input name="worklet[title]" class="large" />
+    </li>
+    <li>
+      <label>Description</label><input name="worklet[description]" class="large" /><span class="btn_add">+</span>
+    </li>
+  </ul>
+</form>
+<span class="btn_l save">Speichern</span>
+<hr />
+<h3>Worklets</h3>
+<ul class="list">
+  <% for worklet in @worklets %>
+  <li><span class="btn_s"><%= worklet.created_at.strftime('%d.%m. %H:%M') %></span> <%= worklet.title %></li>
+  <% end %>
+</ul>

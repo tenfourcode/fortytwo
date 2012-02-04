@@ -15,7 +15,7 @@
             <ul>
               <li id="start"><a href="/">Start</a></li>
               <li id="timetracking"><a href="/timetracking">TimeTracking</a></li>
-              <li id="worklets"><a href="/features">Features</a></li>
+              <li id="worklets"><a href="/worklets">Worklets</a></li>
               <li id="roadmap"><a href="/roadmap">Roadmap</a></li>
             </ul>
           </div>
@@ -37,10 +37,9 @@
       </div>
       <div class="content_wrap">
         <div class="left">
-          <h3>Users</h3>
           <ul class="list">
             <% for user in @users %>
-              <li><%= user.name %></li>
+              <li><a href="<%= @current_page %>/<%= user.name.downcase %>"><%= user.name %></a></li>
             <% end %>
           </ul>
         </div>
@@ -48,7 +47,10 @@
           <%= yield %>
         </div>
         <div class="right">
-          <h3>Message Stream</h3><span class="btn_s">new</span>
+          <h3>Comment Stream</h3><span class="btn_s">new</span>
+          <ul class="list">
+            <li></li>
+          </ul>
         </div>
       </div>
     </div>

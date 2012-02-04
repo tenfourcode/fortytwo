@@ -4,5 +4,6 @@ class User
   
   key :name,  String
   
+  timestamps!
   
 end

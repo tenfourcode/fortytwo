@@ -1,21 +1,31 @@
 <div class="form">
-  <form id="time_form" action="/instant/answer">
-    <h3>Neues Worklet</h3>
-    <ul class="list">
-      <li><label>Task</label>
-        <input type="text" name="task[title]" class="large" />
-        <span onclick="ft.startTimer(this);">start</span>|<span onclick="ft.stopTimer();">stop</span>
-      </li>
-      <li>
+  <h3>Neuer Task</h3>
+  <ul class="list">
+    <li>
+      <form id="task_auto" action="/task/create">
         <label>Task</label>
-        <input type="text" name="task[title]" class="large" />
-        <input type="text" name="task[duration]" class="duration" /><label>Min.</label>
-        <input type="submit" value="Anlegen" />
-      </li>
-    </ul>
-  </form>
+        <input type="text" name="task[text]" class="large" />
+        <span onclick="ft.startTimer(this);" class="btn_l">start</span> <span onclick="ft.stopTimer();" class="btn_l">stop</span>
+      </form>
+    </li>
+    <li>
+      <form id="task_manual" action="/task/create">
+        <label>Task</label>
+        <input type="text" name="task[text]" class="large" />
+        <input type="text" name="task[start_time]" class="duration" /> bis <input type="text" name="task[end_time]" class="duration" />
+        <input type="submit" value="create" />
+      </form>
+    </li>
+  </ul>
 </div>
-<h3>Heutige Worklets</h3>
+<h3>Heutige Tasks</h3>
 <div class="results">
-
+  <ul class="list">
+    <% for task in @tasks %>
+      <li>
+        <span class="btn_s"><%= Time.at(task.duration).gmtime.strftime("%H:%M:%S") %> h</span> <%= task.text %> (<%= task.user %>)
+        <%= task.start_time %>
+      </li>
+    <% end %>
+  </ul>
 </div>

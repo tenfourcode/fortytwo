@@ -1,6 +1,6 @@
 <h3>Neuste Features</h3>
 <ul class="list">
-  <% for feature in @features %>
-    <li><span class="btn_s"><%= feature.created_at.strftime('%d.%m. %H:%M') %></span> <%= feature.title %></li>
+  <% for worklet in @worklets %>
+    <li><span class="btn_s"><%= worklet.created_at.strftime('%d.%m. %H:%M') %></span> <%= worklet.title %></li>
   <% end %>
 </ul>
