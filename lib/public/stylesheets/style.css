@@ -3,6 +3,7 @@ body { padding:0; margin:0; font:14px Baskerville, Georgia; color:#666; backgrou
 input {padding:5px; margin-right:5px; background-color:#fff; border-radius:3; border:1px solid #ccc;}
 
 h3 {display:inline; font-size:14px; margin:0 3px 0 0; padding:0;}
+hr {border:none; border-bottom:1px dotted #999;}
 
 .ft_cf {clear:both;}
 .ui-autocomplete { border: 1px solid #ccc; margin: 0; padding:0; width: 500px; list-style: none; color:#666;}
@@ -57,5 +58,9 @@ input.large {width:300px;}
 /* #009b95 */
 .search_result span {padding:3px 5px 3px 5px; margin-left:5px; font-size:12px; border-radius:2; color:#fff; cursor:pointer; text-align:center; background-color:#999;}
 
-.list {margin:0; padding:0; list-style:none;}
+.list {margin:10px 0 0 0; padding:0; list-style:none;}
 .list li {margin:0 0 10px 0;}
+.list li .btn_s {float:left; margin-right:20px;}
+.list li .item {margin-left:100px; float:left; list-style:none; padding:0; margin:0;}
+.list a {color:#666; text-decoration:none; font-weight:bold;}
+.list a:hover {text-decoration:underline;}
