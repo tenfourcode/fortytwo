@@ -16,7 +16,7 @@ class FortyTwo < Sinatra::Base
   set :public_folder, Proc.new { File.join(root, "public") }
   set :views, Proc.new { File.join(root, "views") }
   use Rack::Session::Cookie, :key => 'fortytwo_session', :path => '/', 
-    :expire_after => 3600,
+    :expire_after => 600*60,
     :secret => '859375824hjgr2hf21cq2gr387rgqckegc32gruze12e87gezcfcqwhdvqgc12xc321ffihgrchsdvqwez'
   
   before do
